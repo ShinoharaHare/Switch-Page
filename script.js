@@ -5,14 +5,7 @@ const links = [
     {
         title: '我的電腦',
         url: 'http://192.168.1.101',
-        icon: 'ion-ios7-monitor',
-        info: ['http://192.168.1.101', '電腦上的伺服器', '可以看電影之類的']
-    },
-    {
-        title: '動畫瘋',
-        url: 'https://ani.gamer.com.tw',
-        icon: 'ion-android-star',
-        info: ['https://ani.gamer.com.tw']
+        icon: 'ion-ios7-monitor'
     }
 ]
 
@@ -21,21 +14,18 @@ class Item {
         this.title = data.title || ''
         this.url = data.url || ''
         this.icon = data.icon || ''
-        this.info = data.info || []
     }
 }
 
 for (let i = 0; i < 15; ++i) {
     if (i < links.length) {
         const item = links[i]
-        let info = ''
-        item.info.map((e) => info += `<li>${e}</li>`)
         $('.grid').append(`
             <a class="item item_" href=${item.url}>
                 <i class="${item.icon}"></i>
                 <span>${item.title}</span>
                 <section class="info">
-                    <ol>${info}</ol>
+                    <ol><li>${item.url}</li></ol>
                 </section>
             </a>
         `)
@@ -60,7 +50,6 @@ function add() {
             <input id="title" class="swal2-input" placeholder="標題">
             <input id="url" class="swal2-input" placeholder="URL">
             <input id="icon" class="swal2-input" placeholder="圖示" value="ion-ios7-world">
-            <input id="info" class="swal2-input" placeholder="說明" value="一個網頁">
         `,
         preConfirm: function () {
             return new Promise((resolve) => {
@@ -68,7 +57,6 @@ function add() {
                     title: $('#title').val(),
                     url: $('#url').val(),
                     icon: $('#icon').val(),
-                    info: $('#info').val().split(',')
                 })
             })
         },
