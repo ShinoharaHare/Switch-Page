@@ -1,6 +1,5 @@
-@import url('https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css');
+@import url('https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css');
 
 body, html, p, .item, span {
   padding: 0;

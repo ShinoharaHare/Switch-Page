@@ -27,7 +27,7 @@ for (let i = 0; i < 15; ++i) {
         `)
     } else {
         if (i == links.length) {
-            $('.grid').append(`<div class="item" style="cursor: pointer;" onclick="add()"><i class="ion-android-add"></i></div>`)
+            $('.grid').append(`<div class="item" style="cursor: pointer;" onclick="add()"><i class="mdi mdi-plus"></i></div>`)
         } else {
             $('.grid').append(`<div class="item"></div>`)
         }
@@ -40,7 +40,7 @@ function add() {
         html: `
             <input id="title" class="swal2-input" placeholder="標題">
             <input id="url" class="swal2-input" placeholder="URL">
-            <input id="icon" class="swal2-input" placeholder="圖示" value="ion-ios7-world">
+            <input id="icon" class="swal2-input" placeholder="圖示" value="mdi-earth">
             <input id="info" class="swal2-input" placeholder="說明" value="一個網頁">
         `,
         preConfirm: function () {
@@ -59,6 +59,6 @@ function add() {
     }).then(({ value }) => {
         links.push(new Item(value))
         localStorage.links = JSON.stringify(links)
-        // location.reload()
+        location.reload()
     }).catch(swal.noop)
 }
