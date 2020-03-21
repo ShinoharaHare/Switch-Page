@@ -4,9 +4,15 @@ const grid = $('.grid')
 const links = [
     {
         title: '我的電腦',
-        url: '192.168.1.101',
+        url: 'http://192.168.1.101',
         icon: 'ion-ios7-monitor',
-        info: ['電腦上的伺服器', '可以看電影之類的']
+        info: ['http://192.168.1.101', '電腦上的伺服器', '可以看電影之類的']
+    },
+    {
+        title: 'FTP',
+        url: 'ftp://Hare:anna1822@192.168.1.101',
+        icon: 'ion-ios7-monitor',
+        info: ['ftp://192.168.1.101', '電腦上的FTP']
     }
 ]
 
