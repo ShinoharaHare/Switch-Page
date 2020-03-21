@@ -18,7 +18,7 @@ for (let i = 0; i < 15; ++i) {
         item.info.map((e) => info += `<li>${e}</li>`)
         $('.grid').append(`
             <a class="item item_" href=${item.url}>
-                <i class="${item.icon}"></i>
+                <i class="mdi ${item.icon}"></i>
                 <span>${item.title}</span>
                 <section class="info">
                     <ol>${info}</ol>
