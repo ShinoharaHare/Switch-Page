@@ -1,4 +1,4 @@
-@import url('https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css');
+@import url('https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 
 body, html, p, .item, span {
@@ -256,7 +256,7 @@ body, html, p, .item, span {
   transform: translateX(0%);
 }
 
-.grid .item:hover span {
+.grid .item_:hover span {
   -moz-transform: translateX(-500%);
   -ms-transform: translateX(-500%);
   -webkit-transform: translateX(-500%);
