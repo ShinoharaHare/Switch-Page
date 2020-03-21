@@ -7,6 +7,12 @@ const links = [
         url: 'http://192.168.1.101',
         icon: 'ion-ios7-monitor',
         info: ['http://192.168.1.101', '電腦上的伺服器', '可以看電影之類的']
+    },
+    {
+        title: '動畫瘋',
+        url: 'https://ani.gamer.com.tw',
+        icon: 'ion-android-star',
+        info: ['https://ani.gamer.com.tw']
     }
 ]
 
