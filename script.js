@@ -1,9 +1,64 @@
-/* 
+const grid = $('.grid')
 
---- EDIT: It's now responsive and should work well all around--- 
+const links = JSON.parse(localStorage.links || '[]')
 
-Made for 4th Community Challenge over at http://www.reddit.com/r/web_design/comments/2f97yk/community_challenge_design_a_link_page/
+class Item {
+    constructor(data) {
+        this.title = data.title || ''
+        this.url = data.url || ''
+        this.icon = data.icon || ''
+        this.info = data.info || []
+    }
+}
 
-Icons used- http://ionicons.com (I couldn't find all of the code-language icons as a webfont, so I had to edit them and use them as images.) 
+for (let i = 0; i < 15; ++i) {
+    if (i < links.length) {
+        const item = links[i]
+        let info = ''
+        item.info.map((e) => info += `<li>${e}</li>`)
+        $('.grid').append(`
+            <a class="item item_" href=${item.url}>
+                <i class="${item.icon}"></i>
+                <span>${item.title}</span>
+                <section class="info">
+                    <ol>${info}</ol>
+                </section>
+            </a>
+        `)
+    } else {
+        if (i == links.length) {
+            $('.grid').append(`<div class="item" style="cursor: pointer;" onclick="add()"><i class="ion-android-add"></i></div>`)
+        } else {
+            $('.grid').append(`<div class="item"></div>`)
+        }
+    }
+}
 
-*/
+function add() {
+    swal.fire({
+        title: '新增連結',
+        html: `
+            <input id="title" class="swal2-input" placeholder="標題">
+            <input id="url" class="swal2-input" placeholder="URL">
+            <input id="icon" class="swal2-input" placeholder="圖示" value="ion-ios7-world">
+            <input id="info" class="swal2-input" placeholder="說明" value="一個網頁">
+        `,
+        preConfirm: function () {
+            return new Promise((resolve) => {
+                resolve({
+                    title: $('#title').val(),
+                    url: $('#url').val(),
+                    icon: $('#icon').val(),
+                    info: $('#url').val().split(',')
+                })
+            })
+        },
+        onOpen: function () {
+            $('#title').focus()
+        }
+    }).then(({ value }) => {
+        links.push(new Item(value))
+        localStorage.links = JSON.stringify(links)
+        // location.reload()
+    }).catch(swal.noop)
+}
