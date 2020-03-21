@@ -75,7 +75,7 @@ body, html, p, .item, span {
   transform: translateX(-50%) translateY(-50%);
 }
 .grid .item .info li {
-  list-style-type: circle;
+  list-style-type: none;
   -moz-transform: translateX(150%);
   -ms-transform: translateX(150%);
   -webkit-transform: translateX(150%);
@@ -269,5 +269,3 @@ body, html, p, .item, span {
   -webkit-transform: translateX(-450%) translateY(-50%);
   transform: translateX(-450%) translateY(-50%);
 }
-
-  
