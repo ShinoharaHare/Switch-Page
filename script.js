@@ -4,8 +4,13 @@ const grid = $('.grid')
 const links = [
     {
         title: '我的電腦',
-        url: 'http://192.168.1.101',
+        url: 'http://192.168.1.109',
         icon: 'ion-ios7-monitor'
+    },
+    {
+        title: 'Google',
+        url: 'https://www.google.com',
+        icon: 'ion-ios7-world'
     }
 ]
 
